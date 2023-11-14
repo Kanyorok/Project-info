@@ -1,0 +1,47 @@
+<p style="color: green"><%= notice %></p>
+
+<div class="jumbotron">
+  <h1 class="display-4"><%= @friend.first_name %>, <%= @friend.last_name %>!</h1>
+  <p class="lead"><%= @friend.email %></p>
+  <hr class="my-4">
+  <p>Full Info: </p>
+</div>
+<br>
+
+<table class="table table-striped">
+  <thead class="table-dark">
+    <tr>
+      <th>
+        <strong>First name:</strong>
+      </th>
+
+      <th>
+        <strong>Last name:</strong>
+      </th>
+
+      <th>
+        <strong>Email:</strong>
+      </th>
+
+      <th>
+        <strong>Phone:</strong>
+      </th>
+
+      <th>
+        <strong>Twitter:</strong>
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <%= render @friend %>
+    </tr>
+  </tbody>
+</table>
+
+<div>
+  <%= link_to "Edit this friend", edit_friend_path(@friend), class:'btn btn-secondary' %> |
+  <%= link_to "Back to friends", friends_path, class:'btn btn-secondary'%> |
+
+  <%= link_to "Destroy this friend", @friend, method: :delete, class:'btn btn-secondary'%>
+</div>
